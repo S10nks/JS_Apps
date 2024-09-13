@@ -19,7 +19,7 @@ body {
 nav {
     display: flex;
     align-items: center;
-    justify-content: space-between;
+    justify-content: space-around;
     margin-top: 1vh;
     border-bottom: #f1f1f1 2px solid;
     margin-bottom: -5vh;
@@ -81,12 +81,13 @@ option {
 input#newTask {
     position: sticky;
     top: 90%;
-    left: 65%;
-    height: 5vh;
+    left: 64.8%;
+    height: calc(5vh - 10px);
     font-size: 3vh;
     outline: none;
-    border: hidden;
+    border: black 5px solid;
     border-radius: .7vh;
+    padding-left: 15px;
 }
 
 select {
@@ -94,21 +95,23 @@ select {
     top: 90%;
     left: 85%;
     height: 5vh;
+    border: black 5px solid;
     font-size: 3vh;
     outline: none;
-    border: hidden;
     border-radius: .7vh;
 }
 
 button#addTaskBtn {
     position: sticky;
     top: 90%;
-    left: 95%;
+    left: 92.7%;
     height: 5vh;
+    width: 5vh;
     font-size: 3vh;
     outline: none;
-    border: hidden;
     border-radius: .7vh;
+    background-color: crimson;
+    border: black 5px solid;
 }
 
 button.completeBtn {
@@ -124,8 +127,25 @@ span.added {
 
 button.deleteBtn {
     position: absolute;
-    left: 40%;
+    left: 35%;
     font-size: 3vh
+}
+
+a.todo {
+    color: limegreen;
+}
+
+div.img {
+    position: sticky;
+    top: 30%;
+    left: 60%;
+    height: 50vh;
+    width: 50vh;
+}
+
+div.img > img {
+    height: 45vh;
+    border-radius: 1vh;
 }
   </style>
 
@@ -133,8 +153,9 @@ button.deleteBtn {
 <body>
 
   <nav>
-    <a href="">To-Do List</a>
-    <a href="">September 2024</a>
+    <a href="" class="todo">To-Do List</a>
+    <a href="" class="gro">Grocery</a>
+    <a href="" class="month">September 24'</a>
   </nav>
 
   <input type="text" id="newTask" placeholder="Enter new task">
@@ -145,10 +166,12 @@ button.deleteBtn {
     <option value="♙">Low</option>
   </select>
 
-  <button id="addTaskBtn">Add Task</button>
+  <button id="addTaskBtn">⨥</button>
 
   <ol id="taskList">
   </ol>
+
+  <div class="img"><img src="Images/cart-img.png" alt=""></div>
 
   <script>
     const taskList = document.getElementById('taskList');
@@ -173,8 +196,8 @@ button.deleteBtn {
         <span>${taskText}</span>
         <span class="${priority}">${priority}</span>
         <span class="added">${taskDate}</span>
-        <button class="completeBtn">Complete</button>
-        <button class="deleteBtn">Delete</button>
+        <button class="completeBtn">☑</button>
+        <button class="deleteBtn">🗑️</button>
       `;
       taskList.appendChild(taskItem);
 
