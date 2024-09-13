@@ -1,0 +1,114 @@
+
+@import url('https://fonts.googleapis.com/css2?family=SUSE:wght@100..800&display=swap');
+
+body {
+    font-family: "SUSE";
+    text-align: left;
+    height: 100000vh;
+    background: url(Images/background.png) center center no-repeat;
+    background-size: cover;
+}
+
+nav {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin: 5vh 0;
+}
+
+nav > a {
+    color: #f1f1f1;
+    font-size: 5vh;
+    text-decoration: none;
+}
+
+ul {
+    list-style: none;
+    padding: 0;
+    color: #f1f1f1;
+}
+
+li {
+    margin-bottom: 10px;
+    color: #f1f1f1;
+    font-size: 3vh;
+}
+
+hr {
+    color: red;
+    background-color: red;
+}
+
+.completed {
+    text-decoration: line-through;
+    color: yellow;
+}
+
+option {
+    width: 5vh;
+}
+
+.H {
+    background-color: red;
+    color: black;
+    position: absolute;
+    left: 29%;
+}
+
+.M {
+    background-color: orange;
+    color: black;
+    position: absolute;
+    left: 29%;
+}
+
+.L {
+    background-color: blue;
+    color: white;
+    position: absolute;
+    left: 29%;
+}
+
+input#newTask {
+    position: sticky;
+    top: 90%;
+    left: 65%;
+    height: 5vh;
+    font-size: 3vh;
+    outline: none;
+    border: hidden;
+    border-radius: .7vh;
+}
+
+select {
+    position: sticky;
+    top: 90%;
+    left: 85%;
+    height: 5vh;
+    font-size: 3vh;
+    outline: none;
+    border: hidden;
+    border-radius: .7vh;
+}
+
+button#addTaskBtn {
+    position: sticky;
+    top: 90%;
+    left: 95%;
+    height: 5vh;
+    font-size: 3vh;
+    outline: none;
+    border: hidden;
+    border-radius: .7vh;
+}
+
+button.completeBtn {
+    position: absolute;
+    left: 32%;
+    font-size: 3vh
+}
+
+span.added {
+    position: absolute;
+    left: 20%;
+}
