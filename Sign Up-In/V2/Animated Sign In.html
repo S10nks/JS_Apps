@@ -1,0 +1,179 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title> Sign In </title>
+    <style>
+
+        /* Animations CSS */
+        @keyframes sign-in-animation {
+            From {
+                transform: translateX(-5000px);
+            }
+            to {
+                transform: translateX(0px);
+            }
+        }
+        @keyframes image-animation {
+            From {
+                transform: translateX(5000px);
+            }
+            to {
+                transform: translateX(0px);
+            }
+        }
+
+        * {
+            margin: 0px;
+            padding: 0px;
+            font-family: 'Lexend';
+            text-decoration: none;
+        }
+
+        body {
+            background-color: #000;
+        }
+
+        div.left-box-content {
+            height: 100%;
+            width: 442px;
+            background-color: #111;
+            display: block;
+            position: fixed;
+            padding-left: 32px;
+            padding-right: 32px;
+            animation-name: sign-in-animation;
+            animation-duration: 2s;
+            animation-iteration-count: 1;
+        }
+
+        div.left-box-content > h1 {
+            text-align: center;
+            font-size: 3rem;
+            margin-top: calc(34% - 30.5px);
+            margin-bottom: 50px;
+            margin-right: 64px;
+            margin-left: -6px;
+            color: rgb(0, 180, 0);
+        }
+
+        div.left-box-content > h2 {
+            color: #e4952e;
+            margin-bottom: 15px;
+        }
+
+        ion-icon {
+            color: #e4952e;
+            font-size: 2rem;
+            margin-bottom: -5px;
+        }
+
+        div.left-box-content > input {
+            height: 50px;
+            width: 334px;
+            padding-left: 20px;
+            padding-right: 20px;
+            font-size: 1.2rem;
+            outline: none;
+            border: hidden;
+        }
+
+        div.create-one {
+            margin-left: 15px;
+        }
+
+        div.left-box-content > div.create-one > a {
+            color: #e4952e;
+            margin-left: 15px;
+            transition: 150ms;
+        }
+
+        div.left-box-content > div.create-one > a:hover {
+            color: #00b400;
+        }
+
+        div.left-box-content > div.create-one > h3 {
+            margin-left: 15px;
+            color: #e4952e;
+            transition: 150ms;
+        }
+
+        div.left-box-content > div.create-one > h3:hover {
+            color: #00b400;
+        }
+
+        div.left-box-content > button {
+            height: 50px;
+            width: 378px;
+            border-radius: 3px;
+            border: hidden;
+            font-size: 1.2rem;
+            background-color: green;
+            color: #f1f1f1;
+            transition: 150ms;
+        }
+
+        div.left-box-content > button:hover {
+            background-color: #e4952e;
+            color: #000;
+        }
+
+        div.right-box-img {
+            height: 100%;
+            width: 73%;
+            background-image: url(nature.png);
+            background-repeat: no-repeat;
+            background-size: cover;
+            display: block;
+            position: fixed;
+            left: 442px;
+            animation-name: image-animation;
+            animation-duration: 2s;
+            animation-iteration-count: 1;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="left-box-content">
+        <h1>Welcome Back!</h1>
+
+        <h2><ion-icon name="at"></ion-icon> E-Mail </h2>
+        <input type="email" id="email" placeholder="Enter Your Email ID" required onkeyup="success()"><br><br><br>
+
+        <h2><ion-icon name="lock-closed"></ion-icon> Password</h2>
+        <input type="password" id="password" placeholder="Enter Your Email ID" required onkeyup="success()"><br><br>
+
+        <div class="create-one"><a href="Animted Sign Up.html"><h3>Don't Have an Account? Create One</h3></a><br><br></div>
+
+        <button type="submit">Sign In</button>
+    </div>
+
+    <div class="right-box-img"></div>
+
+    <!-- IonIcons -->
+    <script type="module" src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"></script>
+    <script nomodule src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"></script>
+
+    <!-- Box Icons -->
+    <script src="https://unpkg.com/boxicons@2.1.4/dist/boxicons.js"></script>
+
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Lexend&family=Poppins&family=Quicksand:wght@500&family=Urbanist&display=swap" rel="stylesheet">
+
+    <!-- Script JS -->
+    <script>
+        function success() {
+	 if(document.getElementById("username").value==="" && document.getElementById("email").value==="" && document.getElementById("password").value==="" && document.getElementById("terms").value==="") { 
+            document.getElementById('submitBtn').disabled = true; 
+        } else { 
+            document.getElementById('sumitBtn').disabled = false;
+        }
+    }
+    </script>
+
+</body>
+</html>
