@@ -1,0 +1,653 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Calculator</title>
+    <style>
+* {
+    margin: 0px;
+    padding: 0px;
+    font-family: Verdana;
+    text-decoration: none;
+}
+
+body {
+    background-image: url(Japan\ City.jpg);
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+div.calc-box {
+    box-sizing: border-box;
+    background-color: rgba(255, 255, 255, 0.1);
+    backdrop-filter: blur(10px);
+    margin-top: 13%;
+    margin-left: 38%;
+    height: 255px;
+    width: 300px;
+    padding: 15px;
+    border-radius: 5px;
+    border: 2px solid #f1f1f1;
+}
+
+h1.heading {
+    text-align: center;
+    color: #f1f1f1;
+    margin-bottom: px;
+    border: 2px #f1f1f1;
+}
+
+h1.underline {
+    pointer-events: none;
+    text-align: center;
+    color: #f1f1f1;
+    margin-top: -30px;
+}
+
+h1.under1ine {
+    pointer-events: none;
+    text-align: center;
+    color: #f1f1f1;
+    margin-top: -50px;
+}
+
+h2.result {
+    text-align: right;
+    color: #f1f1f1;
+    font-size: 3em;
+    margin-bottom: -10px;
+}
+
+input.no1,
+input.no2,
+input.no3 {
+    width: 147px;
+    height: 28px;
+    margin-bottom: 5px;
+    padding-left: 8px;
+    background-color: transparent;
+    color: #f1f1f1;
+    outline: none;
+    border-radius: 2px;
+    border: 1px solid #f1f1f1;
+}
+
+
+input.no4 {
+    width: 147px;
+    height: 28px;
+    margin-bottom: 5px;
+    margin-bottom: -10px;
+    padding-left: 8px;
+    background-color: transparent;
+    color: #f1f1f1;
+    outline: none;
+    border-radius: 2px;
+    border: 1px solid #f1f1f1;
+}
+
+button.plus {
+    width: 30px;
+    height: 30px;
+    background-color: transparent;
+    color: #f1f1f1;
+    outline: none;
+    border-radius: 2px;
+    border: 1px solid #f1f1f1;
+    cursor: pointer;
+}
+
+button.multiply {
+    width: 30px;
+    height: 30px;
+    background-color: transparent;
+    color: #f1f1f1;
+    outline: none;
+    border-radius: 2px;
+    border: 1px solid #f1f1f1;
+    cursor: pointer;
+}
+
+button.clear {
+    width: 30px;
+    height: 30px;
+    background-color: transparent;
+    color: #f1f1f1;
+    outline: none;
+    border-radius: 2px;
+    border: 1px solid #f1f1f1;
+    cursor: pointer;
+}
+
+button.sub {
+    width: 30px;
+    height: 30px;
+    background-color: transparent;
+    color: #f1f1f1;
+    outline: none;
+    border-radius: 2px;
+    border: 1px solid #f1f1f1;
+    cursor: pointer;
+}
+
+button.divide {
+    margin-top: 5px;
+    width: 30px;
+    height: 30px;
+    background-color: transparent;
+    color: #f1f1f1;
+    outline: none;
+    border-radius: 2px;
+    border: 1px solid #f1f1f1;
+    cursor: pointer;
+}
+
+button.per {
+    width: 30px;
+    height: 30px;
+    background-color: transparent;
+    color: #f1f1f1;
+    outline: none;
+    border-radius: 2px;
+    border: 1px solid #f1f1f1;
+    cursor: pointer;
+}
+
+button.hyp {
+    margin-top: 15px;
+    width: 62px;
+    height: 30px;
+    background-color: #f1f1f1;
+    color: #1f1f1f;
+    outline: none;
+    border-radius: 2px;
+    border: 1px solid #f1f1f1;
+    cursor: pointer;
+    transition: 75ms ease-in-out;
+}
+
+button.hyp:focus,
+button.hyp:hover {
+    transition: 75ms ease-in-out;
+    width: 62px;
+    height: 30px;
+    background-color: transparent;
+    color: #f1f1f1;
+    outline: none;
+    border-radius: 2px;
+    border: 1px solid #f1f1f1;
+    cursor: pointer;
+}
+
+button.sqrt {
+    width: 62px;
+    height: 30px;
+    background-color: #f1f1f1;
+    color: #1f1f1f;
+    outline: none;
+    border-radius: 2px;
+    border: 1px solid #f1f1f1;
+    cursor: pointer;
+    transition: 75ms ease-in-out;
+}
+
+button.sqrt:hover {
+    transition: 75ms ease-in-out;
+    width: 62px;
+    height: 30px;
+    background-color: transparent;
+    color: #f1f1f1;
+    outline: none;
+    border-radius: 2px;
+    border: 1px solid #f1f1f1;
+    cursor: pointer;
+}
+
+button.sq {
+    width: 62px;
+    height: 30px;
+    background-color: #f1f1f1;
+    color: #1f1f1f;
+    outline: none;
+    border-radius: 2px;
+    border: 1px solid #f1f1f1;
+    cursor: pointer;
+    transition: 75ms ease-in-out;
+}
+
+button.sq:hover {
+    transition: 75ms ease-in-out;
+    width: 62px;
+    height: 30px;
+    background-color: transparent;
+    color: #f1f1f1;
+    outline: none;
+    border-radius: 2px;
+    border: 1px solid #f1f1f1;
+    cursor: pointer;
+}
+
+button.pow {
+    margin-top: 15px;
+    width: 62px;
+    height: 30px;
+    background-color: #f1f1f1;
+    color: #1f1f1f;
+    outline: none;
+    border-radius: 2px;
+    border: 1px solid #f1f1f1;
+    cursor: pointer;
+    transition: 75ms ease-in-out;
+}
+
+button.pow:hover {
+    transition: 75ms ease-in-out;
+    width: 62px;
+    height: 30px;
+    background-color: transparent;
+    color: #f1f1f1;
+    outline: none;
+    border-radius: 2px;
+    border: 1px solid #f1f1f1;
+    cursor: pointer;
+}
+
+button {
+    transition: 75ms ease-in-out;
+}
+
+button:hover {
+    border: 1px solid #f1f1f1;
+    background-color: #f1f1f1;
+    color: #1f1f1f;
+    transition: 75ms ease-in-out;
+}
+
+.link {
+    margin-top: 5px;
+    margin-left: -525px;
+    width: 62px;
+    height: 30px;
+    background-color: #f1f1f1;
+    color: #1f1f1f;
+    outline: none;
+    border-radius: 2px;
+    border: 1px solid #f1f1f1;
+    cursor: pointer;
+    transition: 75ms ease-in-out;
+  }
+  
+.link:hover, 
+.link:focus {
+    transition: 75ms ease-in-out;
+    width: 62px;
+    height: 30px;
+    background-color: transparent;
+    color: #f1f1f1;
+    outline: none;
+    border-radius: 2px;
+    border: 1px solid #f1f1f1;
+    cursor: pointer;
+  }
+  
+.dropdown {
+    position: relative;
+  }
+  
+.dropdown-menu {
+    position: absolute;
+    box-sizing: border-box;
+    background-color: rgba(255, 255, 255, 0.1);
+    backdrop-filter: blur(10px);
+    margin-top: -242px;
+    margin-left: 300px;
+    height: 255px;
+    width: 300px;
+    padding: 15px;
+    border-radius: 5px;
+    border: 2px solid #f1f1f1;
+    opacity: 0;
+    pointer-events: none;
+    transform: translateY(-10px);
+    transition: opacity 150ms ease-in-out, transform 150ms ease-in-out;
+  }
+  
+.dropdown.active > .link + .dropdown-menu {
+    opacity: 1;
+    transform: translateY(0);
+    pointer-events: auto;
+  }
+
+  .dropdown-menu {
+    position: absolute;
+    box-sizing: border-box;
+    background-color: rgba(255, 255, 255, 0.1);
+    backdrop-filter: blur(10px);
+    margin-top: -242px;
+    margin-left: 300px;
+    height: 255px;
+    width: 300px;
+    padding: 15px;
+    border-radius: 5px;
+    border: 2px solid #f1f1f1;
+    opacity: 0;
+    pointer-events: none;
+    transform: translateY(-10px);
+    transition: opacity 150ms ease-in-out, transform 150ms ease-in-out;
+  }
+  
+.dropdown.active > .link + .dropdown-menu {
+    opacity: 1;
+    transform: translateY(0);
+    pointer-events: auto;
+  }
+  
+.information-grid {
+    display: grid;
+    grid-template-columns: repeat(2, max-content);
+    gap: 2rem;
+  }
+  
+.dropdown-links {
+    display: flex;
+    flex-direction: column;
+    gap: .25rem;
+  }
+  
+.login-form > input {
+    margin-bottom: .5rem;
+  }
+  
+button.submit {
+    margin-top: 20px;
+    width: 100px;
+    height: 30px;
+    background-color: #f1f1f1;
+    color: #1f1f1f;
+    outline: none;
+    border-radius: 2px;
+    border: 1px solid #f1f1f1;
+    cursor: pointer;
+    transition: 75ms ease-in-out;
+}
+
+button.submit:hover{
+    transition: 75ms ease-in-out;
+    width: 100px;
+    height: 30px;
+    background-color: transparent;
+    color: #f1f1f1;
+    outline: none;
+    border-radius: 2px;
+    border: 1px solid #f1f1f1;
+    cursor: pointer;
+}
+    </style>
+</head>
+<body>
+
+    <div class="calc-box">
+
+        <h1 class="heading"> Calculator</h1>
+        <h1 class="underline">___________</h1>
+
+        <h2 class="result" id="result">0</h2><br>
+
+        <input type="text" onfocus="this.value=''" class="no1" id="num1" placeholder="Number 1">
+
+        <button class="plus" onclick="addNumbers()">+</button>
+        <button class="multiply" onclick="multiplyNumbers()">×</button>
+        <button type="button" class="clear" id="clear">C</button>
+        <br>
+    
+        <input type="text" onfocus="this.value=''" class="no2" id="num2" placeholder="Number 2">
+
+        <button class="sub" onclick="subtractNumbers()">-</button>
+        <button class="divide" onclick="divideNumbers()">&divide;</button>
+        <button class="per" onclick="calculatePercentage()">%</button>
+        <br>
+
+        <!-- Hyp -->
+    
+        <!--<div class="dropdown" data-dropdown>
+            <button class="link" data-dropdown-button>⊿H</button>
+            <div class="dropdown-menu">
+              <form class="login-form">
+
+                  <div class="hypotenuse">
+              
+                      <h1 class="heading">Hypotenuse</h1><br>
+                      <h1 class="under1ine">____________</h1><br>
+
+                      <div class="sideC"><label class="sideC" id="cLable">0</label></div><br>
+                      <input type="text" id="aTxtBx" onfocus="this.value=''" class="no3" placeholder="Enter side A">
+              
+                      <input type="text" id="bTxtBx" onfocus="this.value=''" class="no4" placeholder="Enter side B"><br>
+              
+                      <button type="button" id="myBtn" class="submit">Submit</button><br>
+
+              
+                  </div> 
+
+              </form>
+            </div>
+          </div>-->
+
+          <!-- x2 -->
+
+          <!--<div class="dropdown" data-dropdown>
+            <button class="link" data-dropdown-button>x2</button>
+            <div class="dropdown-menu-x2">
+              <form class="login-form">
+
+                  <div class="x2">
+              
+                      <h1 class="heading">Square root</h1><br>
+                      <h1 class="under1ine">____________</h1><br>
+
+                      <div class="sideC"><label class="sideC" id="sqrtAns">0</label></div><br>
+                      <input type="text" id="sqrtNum" onfocus="this.value=''" class="no3" placeholder="Enter a number"><br>
+              
+                      <button type="button" id="subBtn" class="submit">Submit</button><br>
+
+              
+                  </div> 
+
+              </form>
+            </div>
+          </div-->
+
+        <!-- <div id="myDropdown" class="dropdown-power">
+            <button type="button" class="pow" id="pow" data-dropdown>∧</button>
+
+            <div class="dropdown-power-content">
+                gnffffghfrdfhgjkdfnvbcxfjtghaeiu fifvbjfhiguher8i
+            </div>
+        </div>
+
+        <div id="myDropdown" class="dropdown-sqroot">
+            <button type="button" class="sqrt" id="sqrt" data-dropdown>√</button>
+
+            <div class="dropdown-sqroot-content">
+                gnffffghfrdfhgjkdfnvbcxfjtghaeiu fifvbjfhiguher8i
+            </div>
+        </div>-->
+
+    <script>
+console.log("Calculator");
+console.log(" ");
+
+// Add
+
+function addNumbers() {
+    var num1 = parseFloat(document.getElementById('num1').value);
+    var num2 = parseFloat(document.getElementById('num2').value);
+
+    if (isNaN(num1) || isNaN(num2)) {
+      document.getElementById('result').innerText = 'Invalid';
+    } else {
+      var result = num1 + num2;
+      document.getElementById('result').innerText = + result;
+    }
+    console.log("Value + : " + result);
+  }
+
+// Multiplication
+
+function multiplyNumbers() {
+    var num1 = parseFloat(document.getElementById('num1').value);
+    var num2 = parseFloat(document.getElementById('num2').value);
+
+    if (isNaN(num1) || isNaN(num2)) {
+      document.getElementById('result').innerText = 'Invalid';
+    } else {
+      var result = num1 * num2;
+      document.getElementById('result').innerText = + result;
+    }
+    console.log("Value x : " + result);
+  }
+
+// Subtraction
+
+function subtractNumbers() {
+    var num1 = parseFloat(document.getElementById('num1').value);
+    var num2 = parseFloat(document.getElementById('num2').value);
+
+    if (isNaN(num1) || isNaN(num2)) {
+      document.getElementById('result').innerText = 'Invalid';
+    } else {
+      var result = num1 - num2;
+      document.getElementById('result').innerText = + result;
+    }
+    console.log("Value - : " + result);
+  }
+
+// Division
+
+function divideNumbers() {
+  var num1 = parseFloat(document.getElementById('num1').value);
+  var num2 = parseFloat(document.getElementById('num2').value);
+
+  if (isNaN(num1) || isNaN(num2)) {
+    document.getElementById('result').innerText = 'Invalid';
+  } else if (num2 === 0) {
+    document.getElementById('result').innerText = 'Cannot divide by zero.';
+  } else {
+    var result = num1 / num2;
+    result = Number(result);
+    var roundedResult = roundToFourDecimals(result);
+    document.getElementById('result').innerText = roundedResult;
+    console.log("Divided: " + result);
+  }
+}
+
+function roundToFourDecimals(number) {
+  var multiplier = Math.pow(10, 4);
+  return Math.round(number * multiplier) / multiplier;
+}
+
+// Clear
+
+document.getElementById("clear").onclick = function(){
+    result = 0;
+    document.getElementById('result').innerText = result;
+    console.log("Clear: " + result);
+    document.getElementById("num1, num2").value = 0;
+}
+
+// Percent
+
+function calculatePercentage() {
+  var num1 = parseFloat(document.getElementById('num1').value);
+  var num2 = parseFloat(document.getElementById('num2').value);
+
+  if (isNaN(num1) || isNaN(num2)) {
+    document.getElementById('result').innerText = 'Invalid';
+  } else if (num2 === 0) {
+    document.getElementById('result').innerText = 'Cannot divide by zero.';
+  } else {
+    var percentage = (num1 / num2) * 100;
+    percentage = Number(percentage);
+    var roundedPercentage = roundToFourDecimals(percentage);
+    document.getElementById('result').innerText = roundedPercentage + '%';
+  }
+}
+
+function roundToFourDecimals(number) {
+  var multiplier = Math.pow(10, 4);
+  return Math.round(number * multiplier) / multiplier;
+}
+
+// Dropdown
+
+document.addEventListener("click", e => {
+  const isDropdownButton = e.target.matches("[data-dropdown-button]")
+  if (!isDropdownButton && e.target.closest("[data-dropdown]") != null) return
+
+  let currentDropdown
+  if (isDropdownButton) {
+    currentDropdown = e.target.closest("[data-dropdown]")
+    currentDropdown.classList.toggle("active")
+  }
+
+  document.querySelectorAll("[data-dropdown].active").forEach(dropdown => {
+    if (dropdown === currentDropdown) return
+    dropdown.classList.remove("active")
+  })
+})
+
+/* When the user clicks on the button, 
+toggle between hiding and showing the dropdown content */
+function myFunction() {
+  document.getElementById("myDropdown").classList.toggle("show");
+}
+
+// Close the dropdown if the user clicks outside of it
+window.onclick = function(event) {
+  if (!event.target.matches('.dropbtn')) {
+    var dropdowns = document.getElementsByClassName("dropdown-content");
+    var i;
+    for (i = 0; i < dropdowns.length; i++) {
+      var openDropdown = dropdowns[i];
+      if (openDropdown.classList.contains('show')) {
+        openDropdown.classList.remove('show');
+      }
+    }
+  }
+}
+// Hypotenuse JS
+
+document.getElementById("myBtn").onclick = function() {
+
+  a = document.getElementById("aTxtBx").value;
+  a = Number(a);
+
+  b = document.getElementById("bTxtBx").value;
+  b = Number(b);
+
+  c = Math.sqrt (Math.pow(a, 2) +  Math.pow(b, 2));
+  c = Math.round(c);
+
+  document.getElementById("cLable").innerText = c;
+
+  console.log("Hypotenuse is " + c);        
+  }
+
+// Square Root JS
+
+document.getElementById("subBtn").onclick = function () {
+
+  c = document.getElementById("sqrtNum").value;
+  c = Number(c);
+  c = Math.sqrt(c);
+  c = Math.round(c);
+
+  console.log("Square Root Is " + c);
+
+  document.getElementById("sqrtAns").innerText = "Square Root is: " + c;  }
+    </script>
+
+</body>
+</html>

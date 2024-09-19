@@ -1,0 +1,179 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Math</title>
+    <style>
+        * {
+            font-family: Verdana;
+        }
+        div.sideC {
+            margin-bottom: 10px;
+        }
+        
+        div.root {
+            margin-bottom: 10px;
+        }
+
+        div.answer {
+            margin-bottom: 10px;
+        }
+
+        label.countLable {
+            display: block;
+        
+            font-size: 50px;
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Hypotenuse -->
+
+    <div class="hypotenuse">
+        
+        <label>Find The Hypotenuse</lable><br>
+        <label id="aLable">Side A:</label><br>
+        <input type="number" id="aTxtBx" placeholder="Enter A"><br>
+
+        <label id="bLable">Side B:</label><br>
+        <input type="number" id="bTxtBx" placeholder="Enter B"><br>
+
+        <button type="button" id="myBtn" class="subBtn">Submit</button><br>
+        <div class="sideC"><label class="sideC" id="cLable">Side C:</label></div><br>
+
+    </div> 
+
+    <!-- Square Root -->
+
+    <div class="sqrt"> 
+        <label>Find The Square Root</label><br>
+
+        <label>Enter A Number:</label><br>
+        <input type="number" id="sqrtNum" placeholder="Number"><br>
+
+        <button type="button" id="subBtn">Submit</button><br>
+
+        <div class="root"><label id="sqrtAns">Square Root is:</label></div><br>
+    </div>
+
+    <!-- To The Power Of -->
+
+    <div class="power">
+        <label>Power Of</lable><br>
+        <label id="num">Enter A Number</label><br>
+        <input type="number" id="numBx"><br>
+    
+        <label id="bLable">To The Power Of</label><br>
+        <input type="number" id="powBx"><br>
+    
+        <button type="button" id="buttonSubmit" class="mitBtn">Submit</button><br>
+        <div class="answer"><label id="answer">Answer Is:</label></div><br>
+    </div>
+
+    <!-- Square -->
+
+    <label>Square</lable><br>
+        <label id="num">Enter A Number</label><br>
+        <input type="number" id="sqNumBox"><br>
+    
+        <button type="button" id="button1Submit" class="mitBtn">Submit</button><br>
+        <div class="answer"><label id="a1nswer">Answer Is:</label></div><br>
+
+    <!-- Counter -->
+
+        <label class="countLable" id="countLable">0</label><br>
+        <button class="decreaseBtn" id="decreaseBtn">Decrease</button>
+        <button class="resetBtn" id="resetBtn">Reset</button>
+        <button class="increaseBtn" id="increaseBtn">Increase</button>
+
+    <script>
+
+        console.log("Maths |~|");
+        console.log("        ");
+
+// Hypotenuse JS
+
+        document.getElementById("myBtn").onclick = function() {
+
+        a = document.getElementById("aTxtBx").value;
+        a = Number(a);
+
+        b = document.getElementById("bTxtBx").value;
+        b = Number(b);
+
+        c = Math.sqrt (Math.pow(a, 2) +  Math.pow(b, 2));
+        c = Math.round(c);
+
+        document.getElementById("cLable").innerText = "Side C: " + c;
+
+        console.log("Hypotenuse is " + c);        }
+    
+// Square Root JS
+
+        document.getElementById("subBtn").onclick = function () {
+
+            c = document.getElementById("sqrtNum").value;
+            c = Number(c);
+            c = Math.sqrt(c);
+            c = Math.round(c);
+
+            console.log("Square Root Is " + c);
+
+            document.getElementById("sqrtAns").innerText = "Square Root is: " + c;  }
+
+// Power JS 
+
+            document.getElementById("buttonSubmit").onclick = function () {
+
+                n = document.getElementById("numBx").value;
+                n = Number(n);
+
+                p = document.getElementById("powBx").value;
+                p = Number(p);
+
+                x = Math.pow(n, p);
+
+                document.getElementById("answer").innerText = "Answer Is " + x;
+
+                console.log("Power Is " + x);
+            }
+
+// Square
+
+            document.getElementById("button1Submit").onclick = function () {
+
+                n = document.getElementById("sqNumBox").value
+                n = Number(n);
+
+                x = Math.pow(n, 2);
+
+                document.getElementById("a1nswer").innerText = "Answer Is " + x;
+
+                console.log("Squared is " + x);}
+
+// Counter 
+
+            
+        let count = 0;
+
+        document.getElementById("decreaseBtn").onclick = function(){
+            count-=1;
+            document.getElementById("countLable").innerText = count;
+                console.log("Counter decrease " + count); }
+
+        document.getElementById("resetBtn").onclick = function(){
+            count=0;
+            document.getElementById("countLable").innerText = count;
+                console.log("Counter Reset " + count);   }
+
+        document.getElementById("increaseBtn").onclick = function(){
+            count+=1;
+            document.getElementById("countLable").innerText = count;
+                console.log("Counter Increase " + count);  }
+           
+    </script>
+</body>
+</html>
